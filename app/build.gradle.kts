@@ -67,6 +67,8 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(project(":common"))
+    implementation(project(":features:peoplelist"))
+    implementation(project(":features:peopledetail"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

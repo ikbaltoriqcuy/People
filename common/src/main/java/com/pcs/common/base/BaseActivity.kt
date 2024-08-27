@@ -8,15 +8,15 @@ import androidx.databinding.ViewDataBinding
 /**
 Created by ikbaltoriq on 27,August,2024
  **/
-abstract class BaseActivity<T>: AppCompatActivity() {
+abstract class BaseActivity<T: ViewDataBinding>: AppCompatActivity() {
     val binding: T by lazy { DataBindingUtil.setContentView(this, layoutId()) }
 
     abstract fun layoutId(): Int
     abstract fun onCreate()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding?.let {
-            (binding as ViewDataBinding).lifecycleOwner = this@BaseActivity
+        binding.let {
+            (it as ViewDataBinding).lifecycleOwner = this@BaseActivity
         }
         onCreate()
     }
