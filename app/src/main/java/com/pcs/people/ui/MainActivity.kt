@@ -6,7 +6,9 @@ import com.pcs.common.base.BaseActivity
 import com.pcs.people.R
 import com.pcs.people.databinding.ActivityMainBinding
 import com.pcs.people.router.AppRouter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     lateinit var navController: NavController

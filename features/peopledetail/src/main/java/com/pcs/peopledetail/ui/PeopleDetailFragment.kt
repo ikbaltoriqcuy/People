@@ -4,8 +4,9 @@ import android.view.View
 import com.pcs.common.base.BaseFragment
 import com.pcs.peopledetail.R
 import com.pcs.peopledetail.databinding.FragmentPeopleDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class PeopleDetailFragment : BaseFragment<FragmentPeopleDetailBinding>() {
     override fun layoutId(): Int {
         return R.layout.fragment_people_detail
