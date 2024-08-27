@@ -18,6 +18,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -35,6 +40,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packaging {
+        resources {
+            excludes.add("META-INF/gradle/incremental.annotation.processors")
+        }
+    }
 }
 
 dependencies {
@@ -46,8 +57,6 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.hilt.android)
     implementation(libs.hilt.compiler)
-    implementation(libs.androidx.hilt.viewmodel)
-    implementation(libs.androidx.hilt.compiler)
     implementation(libs.retrofit)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
@@ -57,6 +66,7 @@ dependencies {
     implementation(libs.lifecycle.runtime)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+    implementation(project(":common"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
