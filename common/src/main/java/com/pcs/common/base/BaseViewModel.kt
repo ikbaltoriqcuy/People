@@ -10,11 +10,11 @@ import kotlinx.coroutines.cancel
 /**
 Created by ikbaltoriq on 27,August,2024
  **/
-class BaseViewModel: ViewModel() {
+abstract class BaseViewModel: ViewModel() {
     private val job = Job()
-    private val coroutineScope = CoroutineScope(Dispatchers.Main + job)
+    val coroutineScope = CoroutineScope(Dispatchers.Main + job)
 
-    private val _isLoading = NonNullLiveData<Boolean>()
+    private val _isLoading = NonNullLiveData<Boolean>().apply { value = false }
     val isLoading: NonNullLiveData<Boolean> get() = _isLoading
 
     private val _errorMessage = NonNullLiveData<String>()

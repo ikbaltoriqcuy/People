@@ -1,5 +1,6 @@
 package com.pcs.peoplelist.di
 
+import com.pcs.peoplelist.domain.usecase.GetDataPeopleUseCase
 import com.pcs.peoplelist.repository.remote.PeopleRepoImpl
 import com.pcs.peoplelist.repository.service.ApiService
 import dagger.Module
@@ -15,7 +16,7 @@ Created by ikbaltoriq on 28,August,2024
 
 @Module
 @InstallIn(SingletonComponent::class)
-object RepositoryModule {
+object PeopleListModule {
 
     @Singleton
     @Provides
@@ -24,4 +25,9 @@ object RepositoryModule {
     @Singleton
     @Provides
     fun providesRepository(apiService: ApiService) = PeopleRepoImpl(apiService)
+
+    @Singleton
+    @Provides
+    fun providesGetDataPeopleUseCase(repo: PeopleRepoImpl) = GetDataPeopleUseCase(repo)
+
 }

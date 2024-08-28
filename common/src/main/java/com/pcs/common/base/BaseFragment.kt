@@ -17,16 +17,21 @@ abstract class BaseFragment<T: ViewDataBinding>: Fragment() {
 
     abstract fun layoutId():Int
     abstract fun onViewCreated(view: View)
+
+    protected open fun obverseData() {}
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?): View {
         binding = DataBindingUtil.inflate(inflater, layoutId(), container, false)
+        binding.lifecycleOwner = viewLifecycleOwner
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         onViewCreated(view)
+        obverseData()
     }
 }

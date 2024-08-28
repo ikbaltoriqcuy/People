@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_people_detail"/>
     <fragment
         android:id="@+id/peopleListFragment"
-        android:name="com.pcs.peoplelist.ui.PeopleListFragment"
+        android:name="com.pcs.peoplelist.ui.peoplelist.PeopleListFragment"
         android:label="PeopleListFragment"
         tools:layout="@layout/fragment_people_list">
         <action
