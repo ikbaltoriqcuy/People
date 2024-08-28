@@ -7,7 +7,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.pcs.common.base.BaseViewHolder
 import com.pcs.common.utils.ViewUtils.onSetClickOnce
-import com.pcs.peoplelist.R
 import com.pcs.peoplelist.databinding.PeopleItemBinding
 import com.pcs.peoplelist.repository.model.People
 

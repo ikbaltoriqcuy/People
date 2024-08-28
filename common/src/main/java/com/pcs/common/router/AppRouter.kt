@@ -3,7 +3,6 @@ package com.pcs.common.router
 import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.NavDeepLinkRequest
-import dagger.hilt.EntryPoint
 import javax.inject.Inject
 
 /**
@@ -26,9 +25,5 @@ class AppRouter @Inject constructor(var dataCarrier: DataCarrier) {
             .fromUri("https://pcs.com/peopleListFragment".toUri())
             .build()
         navController?.navigate(request)
-    }
-
-    companion object {
-        const val BUNDLE_DATA = "bundle_data"
     }
 }

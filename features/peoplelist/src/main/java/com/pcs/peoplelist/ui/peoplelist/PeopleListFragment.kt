@@ -1,7 +1,6 @@
 package com.pcs.peoplelist.ui.peoplelist
 
 import android.view.View
-import androidx.core.os.bundleOf
 import com.pcs.common.base.BaseFragment
 import com.pcs.peoplelist.R
 import com.pcs.peoplelist.databinding.FragmentPeopleListBinding

@@ -5,7 +5,6 @@ import com.pcs.common.network.Result
 import com.pcs.common.utils.NonNullLiveData
 import com.pcs.peoplelist.domain.usecase.GetDataPeopleUseCase
 import com.pcs.peoplelist.repository.model.People
-import com.pcs.peoplelist.repository.remote.PeopleRepoImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 import kotlinx.coroutines.launch

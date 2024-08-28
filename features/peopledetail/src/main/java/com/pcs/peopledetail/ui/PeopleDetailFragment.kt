@@ -27,10 +27,8 @@ class PeopleDetailFragment : BaseFragment<FragmentPeopleDetailBinding>() {
         binding.vm = vm
         vm.setPerson(dataCarrier.data)
 
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayShowHomeEnabled(true)
         binding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressed()
+            requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
 
