@@ -13,6 +13,7 @@ data class People(
     val city: String,
     val country: String,
     val county: String,
+    @SerializedName("address_no")
     val addressNo: String,
     val street: String,
     @SerializedName("zip_code")
