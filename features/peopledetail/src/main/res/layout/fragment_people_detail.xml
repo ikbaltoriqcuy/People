@@ -40,7 +40,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/dp.0"
             android:padding="@dimen/dp.16"
             app:layout_constraintTop_toBottomOf="@+id/appBar"
             app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +50,7 @@
                 android:id="@+id/imgProfile"
                 android:layout_width="@dimen/dp.180"
                 android:layout_height="@dimen/dp.180"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/dp.16"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp.16"
                 android:text="@string/DETAIL_FIRST_NAME"
-                android:textSize="14sp"
+                android:textSize="@dimen/sp.14"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
 
@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/dp.8"
                 android:text="@{vm.getFirstName()}"
-                android:textSize="14sp"
+                android:textSize="@dimen/sp.14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvFirstName"
                 app:layout_constraintStart_toEndOf="@+id/tvFirstName"
                 app:layout_constraintTop_toTopOf="@+id/tvFirstName" />
@@ -84,7 +84,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp.16"
                 android:text="@string/DETAIL_LAST_NAME"
-                android:textSize="14sp"
+                android:textSize="@dimen/sp.14"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
 
@@ -94,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/dp.8"
                 android:text="@{vm.getLastName()}"
-                android:textSize="14sp"
+                android:textSize="@dimen/sp.14"
                 app:layout_constraintBottom_toBottomOf="@+id/tvLastName"
                 app:layout_constraintStart_toEndOf="@+id/tvLastName"
                 app:layout_constraintTop_toTopOf="@+id/tvLastName" />
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp.16"
                 android:text="@string/DETAIL_ADDRESS"
-                android:textSize="14sp"
+                android:textSize="@dimen/sp.14"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
 
@@ -117,7 +117,7 @@
                 android:lines="3"
                 android:paddingLeft="@dimen/dp.8"
                 android:text="@{vm.getAddress()}"
-                android:textSize="14sp"
+                android:textSize="@dimen/sp.14"
                 app:layout_constraintStart_toEndOf="@+id/tvAddress"
                 app:layout_constraintTop_toTopOf="@+id/tvAddress" />
 
