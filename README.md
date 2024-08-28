@@ -8,6 +8,7 @@ This is a simple app designed to list people and view detailed information about
 - ViewBinding & Data Binding
 - Retrofit + GSON
 - Multi-Module Architecture
+- Jetpack Navigation
 
 # Module Relation
 
