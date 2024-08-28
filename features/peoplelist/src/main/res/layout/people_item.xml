@@ -6,6 +6,7 @@
 
     <data>
         <import type="android.view.View" />
+        <import type="com.pcs.common.utils.DateFormat" />
         <variable
             name="item"
             type="com.pcs.peoplelist.repository.model.People" />
@@ -49,7 +50,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
             app:layout_constraintStart_toEndOf="@+id/imgProfile"
             app:layout_constraintTop_toBottomOf="@+id/tvFullName"
-            tools:text="@{item.createdAt}" />
+            tools:text="@{DateFormat.formatDateString(item.createdAt)}" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

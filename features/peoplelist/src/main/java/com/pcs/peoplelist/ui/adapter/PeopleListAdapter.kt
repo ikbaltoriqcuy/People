@@ -23,7 +23,7 @@ class PeopleListAdapter(val context: Context, val onClickItemListener: (People) 
         inflater: LayoutInflater,
         viewType: Int,
     ): RecyclerView.ViewHolder {
-        return PeopleViewHolder(context, inflater)
+        return PeopleViewHolder(context, parent, inflater)
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {

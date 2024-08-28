@@ -15,84 +15,114 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/dp.16"
         android:background="@android:color/white"
         tools:context=".ui.PeopleDetailFragment">
 
-        <ImageView
-            android:id="@+id/imgProfile"
-            android:layout_width="@dimen/dp.120"
-            android:layout_height="@dimen/dp.120"
-            android:layout_marginTop="16dp"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_avatar_default" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tvFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp.16"
-            android:text="@string/DETAIL_FIRST_NAME"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:navigationIcon="@drawable/ic_arrow_back" />
 
+        </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/tvValueFirstName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/dp.8"
-            android:text="@{vm.getFirstName()}"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvFirstName"
-            app:layout_constraintStart_toEndOf="@+id/tvFirstName"
-            app:layout_constraintTop_toTopOf="@+id/tvFirstName" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/dp.16"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/tvLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp.16"
-            android:text="@string/DETAIL_LAST_NAME"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="@dimen/dp.180"
+                android:layout_height="@dimen/dp.180"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_avatar_default" />
 
-        <TextView
-            android:id="@+id/tvValueLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{vm.getLastName()}"
-            android:textSize="14sp"
-            android:paddingLeft="@dimen/dp.8"
-            app:layout_constraintBottom_toBottomOf="@+id/tvLastName"
-            app:layout_constraintStart_toEndOf="@+id/tvLastName"
-            app:layout_constraintTop_toTopOf="@+id/tvLastName" />
+            <TextView
+                android:id="@+id/tvFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp.16"
+                android:text="@string/DETAIL_FIRST_NAME"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgProfile" />
 
 
-        <TextView
-            android:id="@+id/tvAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp.16"
-            android:text="@string/DETAIL_ADDRESS"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
+            <TextView
+                android:id="@+id/tvValueFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp.8"
+                android:text="@{vm.getFirstName()}"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvFirstName"
+                app:layout_constraintStart_toEndOf="@+id/tvFirstName"
+                app:layout_constraintTop_toTopOf="@+id/tvFirstName" />
 
-        <TextView
-            android:id="@+id/tvValueAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{vm.getAddress()}"
-            android:textSize="14sp"
-            android:paddingLeft="@dimen/dp.8"
-            android:lines="3"
-            app:layout_constraintStart_toEndOf="@+id/tvAddress"
-            app:layout_constraintTop_toTopOf="@+id/tvAddress" />
+            <TextView
+                android:id="@+id/tvLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp.16"
+                android:text="@string/DETAIL_LAST_NAME"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstName" />
+
+            <TextView
+                android:id="@+id/tvValueLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/dp.8"
+                android:text="@{vm.getLastName()}"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLastName"
+                app:layout_constraintStart_toEndOf="@+id/tvLastName"
+                app:layout_constraintTop_toTopOf="@+id/tvLastName" />
+
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp.16"
+                android:text="@string/DETAIL_ADDRESS"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvLastName" />
+
+            <TextView
+                android:id="@+id/tvValueAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="3"
+                android:paddingLeft="@dimen/dp.8"
+                android:text="@{vm.getAddress()}"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/tvAddress"
+                app:layout_constraintTop_toTopOf="@+id/tvAddress" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -5,7 +5,7 @@ import android.view.View
 /**
 Created by ikbaltoriq on 27,August,2024
  **/
-object viewUtils {
+object ViewUtils {
 
     private const val CLICK_DELAY = 1000
     fun View.onSetClickOnce(onAction: () -> Unit) {

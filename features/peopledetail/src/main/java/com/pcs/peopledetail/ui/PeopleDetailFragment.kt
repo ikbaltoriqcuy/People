@@ -1,6 +1,7 @@
 package com.pcs.peopledetail.ui
 
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -25,6 +26,12 @@ class PeopleDetailFragment : BaseFragment<FragmentPeopleDetailBinding>() {
     override fun onViewCreated(view: View) {
         binding.vm = vm
         vm.setPerson(dataCarrier.data)
+
+        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayShowHomeEnabled(true)
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
+        }
     }
 
     override fun obverseData() {
@@ -36,7 +43,7 @@ class PeopleDetailFragment : BaseFragment<FragmentPeopleDetailBinding>() {
     private fun loadImageAvatar(imgUrl: String) {
         Glide.with(requireContext())
             .load(imgUrl)
-            .error(R.drawable.ic_avatar_default)
+            .error(com.pcs.common.R.drawable.ic_avatar_default)
             .apply(RequestOptions.circleCropTransform())
             .into(binding.imgProfile)
     }

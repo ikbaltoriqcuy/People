@@ -34,11 +34,10 @@ class PeopleDetailUseCase @Inject constructor() {
             address.appendLine()
             address.append(county)
             address.append(' ')
-            address.appendLine()
             address.append(zipCode)
-            address.append(' ')
+            address.appendLine()
             address.append(country)
         }
-        return address.toString()
+        return address.toString().trim()
     }
 }
