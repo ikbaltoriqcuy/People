@@ -1,5 +1,6 @@
 package com.pcs.common.network.di
 
+import com.pcs.common.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,7 +18,7 @@ Created by ikbaltoriq on 28,August,2024
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-    const val BASE_URL = "https://66b197c51ca8ad33d4f482c9.mockapi.io/"
+    const val BASE_URL = BuildConfig.BASE_URL
 
     @Singleton
     @Provides

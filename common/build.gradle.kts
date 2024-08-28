@@ -16,8 +16,15 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
+    android.buildFeatures.buildConfig = true
+
     buildTypes {
+        val baseUrl = project.findProperty("BASE_URL") as String?
+        debug {
+            buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"$baseUrl\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
