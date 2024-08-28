@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -56,7 +57,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
     implementation(libs.retrofit)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
@@ -69,7 +70,7 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":features:peoplelist"))
     implementation(project(":features:peopledetail"))
-
+    implementation("com.squareup:javapoet:1.13.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
