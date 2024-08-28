@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="PEOPLE_LIST_LOADING_MESSAGE">Sedang Mengambil Data...</string>
+</resources>
