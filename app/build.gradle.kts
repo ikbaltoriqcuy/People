@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -16,6 +17,11 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
     }
 
     buildTypes {
@@ -35,6 +41,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    packaging {
+        resources {
+            excludes.add("META-INF/gradle/incremental.annotation.processors")
+        }
+    }
 }
 
 dependencies {
@@ -45,9 +57,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.hilt.android)
-    implementation(libs.hilt.compiler)
-    implementation(libs.androidx.hilt.viewmodel)
-    implementation(libs.androidx.hilt.compiler)
+    kapt(libs.hilt.compiler)
     implementation(libs.retrofit)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
@@ -57,7 +67,9 @@ dependencies {
     implementation(libs.lifecycle.runtime)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
-
+    implementation(project(":common"))
+    implementation(project(":features:peoplelist"))
+    implementation(project(":features:peopledetail"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

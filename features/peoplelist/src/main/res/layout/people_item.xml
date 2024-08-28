@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <import type="com.pcs.common.utils.DateFormat" />
+        <variable
+            name="item"
+            type="com.pcs.peoplelist.repository.model.People" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="@dimen/dp.8"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@drawable/ripple_background">
+
+        <ImageView
+            android:id="@+id/imgProfile"
+            android:layout_width="@dimen/dp.60"
+            android:layout_height="@dimen/dp.60"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_avatar_default" />
+
+
+        <TextView
+            android:id="@+id/tvFullName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp.16"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toTopOf="@+id/imgProfile"
+            tools:text="@{item.name}" />
+
+        <TextView
+            android:id="@+id/tvDateBirth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp.16"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProfile"
+            app:layout_constraintStart_toEndOf="@+id/imgProfile"
+            app:layout_constraintTop_toBottomOf="@+id/tvFullName"
+            tools:text="@{DateFormat.formatDateString(item.createdAt)}" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
