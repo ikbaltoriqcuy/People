@@ -57,10 +57,12 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
     implementation(libs.retrofit.converter.gson)
+    implementation(libs.gson)
     implementation(libs.hilt.android)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     kapt(libs.hilt.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.squareup:javapoet:1.13.0")
 }

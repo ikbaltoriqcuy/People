@@ -1,2 +1,5 @@
 <resources>
+    <string name="DETAIL_FIRST_NAME">First Name :</string>
+    <string name="DETAIL_LAST_NAME" >Last Name  :</string>
+    <string name="DETAIL_ADDRESS"   >Address    :</string>
 </resources>

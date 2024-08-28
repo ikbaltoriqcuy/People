@@ -70,7 +70,6 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":features:peoplelist"))
     implementation(project(":features:peopledetail"))
-    implementation("com.squareup:javapoet:1.13.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

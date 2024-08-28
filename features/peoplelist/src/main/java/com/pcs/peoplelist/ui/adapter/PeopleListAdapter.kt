@@ -12,10 +12,11 @@ import com.pcs.peoplelist.ui.adapter.holder.PeopleViewHolder
 /**
 Created by ikbaltoriq on 28,August,2024
  **/
-class PeopleListAdapter (val context: Context): BaseListAdapter<People>(
-    itemsSame = { old, new -> old.id == new.id },
-    contentsSame = { old, new -> old == new }
-) {
+class PeopleListAdapter(val context: Context, val onClickItemListener: (People) -> Unit = {}) :
+    BaseListAdapter<People>(
+        itemsSame = { old, new -> old.id == new.id },
+        contentsSame = { old, new -> old == new }
+    ) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -27,10 +28,13 @@ class PeopleListAdapter (val context: Context): BaseListAdapter<People>(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val item = getItem(position)
-        (holder as PeopleViewHolder).bind(item)
+        (holder as PeopleViewHolder).bind(item, onClickItemListener)
     }
 
-    override fun getItemCount(): Int { return super.getItemCount() }
+    override fun getItemCount(): Int {
+        return super.getItemCount()
+    }
+
     fun updateData(items: MutableList<People>) {
         submitList(items)
         notifyItemRangeChanged(0, items.size)

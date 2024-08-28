@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.pcs.common.base.BaseViewHolder
+import com.pcs.common.utils.viewUtils.onSetClickOnce
 import com.pcs.peoplelist.R
 import com.pcs.peoplelist.databinding.PeopleItemBinding
 import com.pcs.peoplelist.repository.model.People
@@ -19,7 +20,7 @@ class PeopleViewHolder(
     binding = PeopleItemBinding.inflate(inflater)
 ) {
 
-    fun bind(item: People) {
+    fun bind(item: People, onClickItemListener: (People) -> Unit = {}) {
         Glide.with(context)
             .load(item.avatar)
             .error(R.drawable.ic_avatar_default)
@@ -27,5 +28,8 @@ class PeopleViewHolder(
             .into(binding.imgProfile)
 
         binding.item = item
+        binding.root.onSetClickOnce {
+            onClickItemListener(item)
+        }
     }
 }

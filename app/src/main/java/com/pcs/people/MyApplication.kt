@@ -8,8 +8,4 @@ Created by ikbaltoriq on 28,August,2024
  **/
 
 @HiltAndroidApp
-class MyApplication: Application() {
-    override fun onCreate() {
-        super.onCreate()
-    }
-}
+class MyApplication: Application()

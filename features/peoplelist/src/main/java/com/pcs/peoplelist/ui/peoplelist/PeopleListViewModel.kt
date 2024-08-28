@@ -3,6 +3,7 @@ package com.pcs.peoplelist.ui.peoplelist
 import com.pcs.common.base.BaseViewModel
 import com.pcs.common.network.Result
 import com.pcs.common.utils.NonNullLiveData
+import com.pcs.peoplelist.domain.usecase.GetDataPeopleUseCase
 import com.pcs.peoplelist.repository.model.People
 import com.pcs.peoplelist.repository.remote.PeopleRepoImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,8 +15,8 @@ Created by ikbaltoriq on 28,August,2024
  **/
 
 @HiltViewModel
-class PeopleListViewModel  @Inject constructor(
-    private val peopleRepo: PeopleRepoImpl
+class PeopleListViewModel @Inject constructor(
+    private val getDataPeopleUseCase: GetDataPeopleUseCase
 ): BaseViewModel() {
 
     private val _peopleList = NonNullLiveData<MutableList<People>>()
@@ -32,7 +33,7 @@ class PeopleListViewModel  @Inject constructor(
     fun getDataPeople() {
         coroutineScope.launch {
             setIsLoading(true)
-            val result = peopleRepo.getDataPeople()
+            val result = getDataPeopleUseCase.invoke()
 
             when(result) {
                 is Result.Success -> {

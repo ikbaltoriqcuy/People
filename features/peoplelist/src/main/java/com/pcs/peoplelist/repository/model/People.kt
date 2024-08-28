@@ -1,5 +1,9 @@
 package com.pcs.peoplelist.repository.model
 
+import android.os.Parcel
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+
 /**
 Created by ikbaltoriq on 28,August,2024
  **/
@@ -13,6 +17,7 @@ data class People(
     val county: String,
     val addressNo: String,
     val street: String,
+    @SerializedName("zip_code")
     val zipCode: String,
     val id: String
 )

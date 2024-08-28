@@ -6,17 +6,24 @@
     app:startDestination="@id/peopleListFragment">
 
     <fragment
-        android:id="@+id/peopleDetailFragment"
-        android:name="com.pcs.peopledetail.ui.PeopleDetailFragment"
-        android:label="PeopleDetailFragment"
-        tools:layout="@layout/fragment_people_detail"/>
-    <fragment
         android:id="@+id/peopleListFragment"
         android:name="com.pcs.peoplelist.ui.peoplelist.PeopleListFragment"
         android:label="PeopleListFragment"
         tools:layout="@layout/fragment_people_list">
+
+        <deepLink
+            app:uri="https://pcs.com/peopleListFragment" />
+
         <action
             android:id="@+id/action_peopleListFragment_to_peopleDetailFragment"
             app:destination="@id/peopleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/peopleDetailFragment"
+        android:name="com.pcs.peopledetail.ui.PeopleDetailFragment"
+        android:label="PeopleDetailFragment"
+        tools:layout="@layout/fragment_people_detail">
+        <deepLink
+            app:uri="https://pcs.com/peopleDetailFragment" />
     </fragment>
 </navigation>
